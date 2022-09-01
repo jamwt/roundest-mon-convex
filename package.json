@@ -6,32 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postinstall": "prisma generate",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\""
   },
   "dependencies": {
-    "@prisma/client": "^3.5.0",
-    "@trpc/client": "^9.15.0",
-    "@trpc/next": "^9.15.0",
-    "@trpc/react": "^9.15.0",
-    "@trpc/server": "^9.15.0",
     "@upstash/ratelimit": "^0.1.4",
     "@upstash/redis": "^1.12.0",
+    "convex": "^0.1.9",
+    "lodash": "^4.17.21",
+    "mersenne-twister": "^1.1.0",
     "next": "12.2.5",
     "next-plausible": "^3.1.4",
     "pokenode-ts": "^1.9.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-query": "^3.33.5",
-    "zod": "^3.11.6"
+    "react-query": "^3.33.5"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.184",
+    "@types/mersenne-twister": "^1.1.2",
     "@types/react": "17.0.37",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.1",
-    "prisma": "^3.5.0",
     "tailwindcss": "^2.2.19",
-    "ts-node": "^10.4.0",
-    "typescript": "4.5.2"
+    "ts-node": "^10.9.1",
+    "typescript": "4.8.2"
   }
 }
