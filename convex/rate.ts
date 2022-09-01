@@ -23,7 +23,7 @@ export default mutation(
     pokeFor.votesFor += 1;
     pokeAgainst.totalVotes += 1;
     sessionObject.guesses += 2;
-    if (sessionObject.guesses >= POKEMON_COUNT - 2) {
+    if (sessionObject.guesses > POKEMON_COUNT - 2) {
       sessionObject.generation += 1;
       sessionObject.guesses = 0;
     }
