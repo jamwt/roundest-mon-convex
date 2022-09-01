@@ -44,9 +44,16 @@ export default function Home() {
     plausible("cast-vote");
   };
   useEffect(() => {
+    var sessionData = window.localStorage.getItem("roundest-mon-session");
+    if (sessionData === null) {
+      var sessionNumber = Math.floor(Math.random() * 999999999);
+      sessionData = JSON.stringify(sessionNumber);
+      window.localStorage.setItem("roundest-mon-session", sessionData);
+    }
+    const snum: number = JSON.parse(sessionData);
     const background = async () => {
-      await initRatingSession(42);
-      setSession(42);
+      await initRatingSession(snum);
+      setSession(snum);
     };
     background();
   }, [initRatingSession, setSession]);
