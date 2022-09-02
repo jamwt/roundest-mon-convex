@@ -12,7 +12,7 @@ export type Pokemon = {
 export type Session = {
   id: number;
   generation: number;
-  guesses: number;
+  offset: number;
   _id?: any;
 };
 

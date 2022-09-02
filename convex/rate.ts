@@ -1,7 +1,7 @@
 // myMutationFunction.ts
 import { mutation } from "./_generated/server";
 import { Pokemon, POKEMON_COUNT, Session } from "../src/schema";
-import { getRound } from "./nextContest";
+import { getRound } from "./nextRating";
 
 export default mutation(
   async ({ db }, which: number, session: number, round: [number, number]) => {
@@ -14,7 +14,7 @@ export default mutation(
     const [generation, guess] = round;
     if (
       sessionObject.generation !== generation ||
-      sessionObject.guesses !== guess
+      sessionObject.offset !== guess
     ) {
       return;
     }
@@ -29,11 +29,11 @@ export default mutation(
     pokeFor.totalVotes += 1;
     pokeFor.votesFor += 1;
     pokeAgainst.totalVotes += 1;
-    sessionObject.guesses += 2;
+    sessionObject.offset += 2;
 
-    if (sessionObject.guesses > POKEMON_COUNT - 2) {
+    if (sessionObject.offset > POKEMON_COUNT - 2) {
       sessionObject.generation += 1;
-      sessionObject.guesses = 0;
+      sessionObject.offset = 0;
     }
 
     db.replace(pokeFor._id, pokeFor);

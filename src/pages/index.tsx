@@ -16,8 +16,7 @@ export default function Home() {
   const [submittedRound, setSubmittedRound] = useState(
     null as null | [number, number]
   );
-  const pokemonRound = useQuery("nextContest", session);
-
+  const pokemonRound = useQuery("nextRating", session);
   const voteMutation = useMutation("rate");
   const initRatingSession = useMutation("initRatingSession");
   const plausible = usePlausible();

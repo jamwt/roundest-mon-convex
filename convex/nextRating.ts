@@ -26,8 +26,8 @@ export async function getRound(
   session: Session
 ): Promise<PokemonRound> {
   const indexes = seed_shuffled_indexes(session);
-  const pokeId1 = indexes[session.guesses];
-  const pokeId2 = indexes[session.guesses + 1];
+  const pokeId1 = indexes[session.offset];
+  const pokeId2 = indexes[session.offset + 1];
 
   const getPoke = async (id: number) => {
     const poke = await db
@@ -44,7 +44,7 @@ export async function getRound(
   return {
     firstPokemon: poke1,
     secondPokemon: poke2,
-    round: [session.generation, session.guesses],
+    round: [session.generation, session.offset],
   };
 }
 

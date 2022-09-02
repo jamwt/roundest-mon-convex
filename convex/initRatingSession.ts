@@ -11,7 +11,7 @@ export default mutation(async ({ db }, session: number) => {
     const sessionObject: Session = {
       id: session,
       generation: 0,
-      guesses: 0,
+      offset: 0,
     };
     db.insert("sessions", sessionObject);
   }

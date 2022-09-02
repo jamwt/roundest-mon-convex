@@ -11,7 +11,7 @@
 
 import type initRatingSession from "../initRatingSession";
 import type insertPokemon from "../insertPokemon";
-import type nextContest from "../nextContest";
+import type nextRating from "../nextRating";
 import type rate from "../rate";
 import type results from "../results";
 import type { OptimisticLocalStore as GenericOptimisticLocalStore } from "convex/browser";
@@ -28,7 +28,7 @@ import type { ClientMutation, ClientQuery } from "convex/server";
  */
 export type ConvexAPI = {
   queries: {
-    nextContest: ClientQuery<typeof nextContest>;
+    nextRating: ClientQuery<typeof nextRating>;
     results: ClientQuery<typeof results>;
   };
   mutations: {
