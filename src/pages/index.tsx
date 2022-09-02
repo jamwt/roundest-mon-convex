@@ -27,19 +27,9 @@ export default function Home() {
 
     setSubmittedRound(pokemonRound.round);
     if (selected === pokemonRound?.firstPokemon.id) {
-      // If voted for 1st pokemon, fire voteFor with first ID
-      voteMutation(
-        pokemonRound.firstPokemon.id,
-        pokemonRound.secondPokemon.id,
-        session!
-      );
+      voteMutation(1, session!, pokemonRound.round);
     } else {
-      // else fire voteFor with second ID
-      voteMutation(
-        pokemonRound.secondPokemon.id,
-        pokemonRound.firstPokemon.id,
-        session!
-      );
+      voteMutation(2, session!, pokemonRound.round);
     }
     plausible("cast-vote");
   };
