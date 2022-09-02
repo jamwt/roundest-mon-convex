@@ -1,4 +1,4 @@
-import { Pokemon, VoteResults } from "../src/schema";
+import { Pokemon, VoteResults } from "../src/protocol";
 import { query } from "./_generated/server";
 
 const generateCountPercent = (pokemon: Pokemon) => {

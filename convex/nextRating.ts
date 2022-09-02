@@ -2,7 +2,7 @@
 import { DatabaseReader, query } from "./_generated/server";
 import mt from "mersenne-twister";
 import _ from "lodash";
-import { Pokemon, PokemonRound, POKEMON_COUNT, Session } from "../src/schema";
+import { Pokemon, PokemonRound, POKEMON_COUNT, Session } from "../src/protocol";
 
 function seed_shuffled_indexes(session: Session): number[] {
   var indexes = [];
@@ -53,7 +53,7 @@ export default query(
     if (session === null) {
       return null;
     }
-    const sessionObject: Session = await db
+    const sessionObject = await db
       .table("sessions")
       .filter((q) => q.eq(q.field("id"), session))
       .first();

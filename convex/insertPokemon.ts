@@ -1,6 +1,6 @@
 // myMutationFunction.ts
 import { DatabaseReader, DatabaseWriter, mutation } from "./_generated/server";
-import { Pokemon } from "../src/schema";
+import { Pokemon } from "../src/protocol";
 
 async function insertOnePokemon(
   db: DatabaseWriter,

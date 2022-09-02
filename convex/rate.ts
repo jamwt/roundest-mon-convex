@@ -1,14 +1,14 @@
 // myMutationFunction.ts
 import { mutation } from "./_generated/server";
-import { Pokemon, POKEMON_COUNT, Session } from "../src/schema";
+import { Pokemon, POKEMON_COUNT, Session } from "../src/protocol";
 import { getRound } from "./nextRating";
 
 export default mutation(
   async ({ db }, which: number, session: number, round: [number, number]) => {
-    const sessionObject: Session = await db
+    const sessionObject: Session = (await db
       .table("sessions")
       .filter((q) => q.eq(q.field("id"), session))
-      .first();
+      .first())!;
 
     // Double voting?
     const [generation, guess] = round;

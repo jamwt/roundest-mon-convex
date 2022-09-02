@@ -1,4 +1,4 @@
-import { POKEMON_COUNT } from "../src/schema";
+import { POKEMON_COUNT } from "../src/protocol";
 import { PokemonClient } from "pokenode-ts";
 
 import { convexHttpClient } from "../src/backend/convex";

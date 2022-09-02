@@ -2,7 +2,7 @@ import type { GetServerSideProps } from "next";
 
 import Image from "next/image";
 import Head from "next/head";
-import { Pokemon, VoteResults } from "@/schema";
+import { Pokemon, VoteResults } from "@/protocol";
 import { useQuery } from "../../convex/_generated/react";
 
 const PokemonListing: React.FC<{

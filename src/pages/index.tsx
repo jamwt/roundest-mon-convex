@@ -6,7 +6,7 @@ import Head from "next/head";
 import { usePlausible } from "next-plausible";
 import { useEffect, useState } from "react";
 import { useMutation, useQuery } from "../../convex/_generated/react";
-import { Pokemon } from "@/schema";
+import { Pokemon } from "@/protocol";
 
 const btn =
   "inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm font-medium rounded-full text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500";

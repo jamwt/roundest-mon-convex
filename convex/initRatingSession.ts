@@ -1,4 +1,4 @@
-import { Session } from "../src/schema";
+import { Session } from "../src/protocol";
 import { mutation } from "./_generated/server";
 
 export default mutation(async ({ db }, session: number) => {
